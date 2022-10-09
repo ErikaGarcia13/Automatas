@@ -50,6 +50,7 @@ namespace Automatas
                         SiguienteEstado = 2;
                     }
                     
+
                     else
                     {
                         SiguienteEstado = 28;
@@ -148,6 +149,153 @@ namespace Automatas
                     }
                     break;
                 case 8:
+                    SETClasificacion(Tipos.Asignacion);
+                    if (t == '=')
+                    {
+                        SiguienteEstado = 9;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 9:
+                    SETClasificacion(Tipos.OperadorRelacional);
+                    SiguienteEstado = F;
+                    break;
+                case 10:
+                    SETClasificacion(Tipos.Caracter);
+                    if(t == '=')
+                    {
+                        SiguienteEstado = 11;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 11:
+                    SETClasificacion(Tipos.Inicializacion);
+                    SiguienteEstado = F;
+                    break;
+                case 12:
+                    SETClasificacion(Tipos.FinSentencia);
+                    SiguienteEstado = F;
+                    break;
+                case 13:
+                    SETClasificacion(Tipos.Caracter);
+                    if(t == '&')
+                    {
+                        SiguienteEstado = 14;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 14:
+                    SETClasificacion(Tipos.OperadorLogico);
+                    SiguienteEstado = F;
+                    break;
+                case 15:
+                    SETClasificacion(Tipos.Caracter);
+                    if(t == '|')
+                    {
+                        SiguienteEstado = 14;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 16:
+                    SETClasificacion(Tipos.OperadorLogico);
+                    if(t == '=')
+                    {
+                        SiguienteEstado = 18;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 17:
+                    SETClasificacion(Tipos.OperadorRelacional);
+                    if(t == '=')
+                    {
+                        SiguienteEstado = 18;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 18:
+                    SETClasificacion(Tipos.OperadorRelacional);
+                    SiguienteEstado = F;
+                    break;
+                case 19:
+                    SETClasificacion(Tipos.OperadorRelacional);
+                    if(t == '=' || t == '>')
+                    {
+                        SiguienteEstado = 18;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 20:
+                    SETClasificacion(Tipos.OperadorTermino);
+                    if(t == '+' || t == '=')
+                    {
+                        SiguienteEstado = 22;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 21:
+                    SETClasificacion(Tipos.OperadorTermino);
+                    if(t == '-' || t == '=')
+                    {
+                        SiguienteEstado = 22;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 22:
+                    SETClasificacion(Tipos.IncrementoTermino);
+                    SiguienteEstado = F;
+                    break;
+                case 23:
+                    SETClasificacion(Tipos.OperadorFactor);
+                    if(t == '=')
+                    {
+                        SiguienteEstado = 24;
+                    }
+                    else
+                    {
+                        SiguienteEstado = F;
+                    }
+                    break;
+                case 24:
+                    SETClasificacion(Tipos.IncrementoFactor);
+                    SiguienteEstado = F;
+                    break;
+                case 25:
+                    SETClasificacion(Tipos.Ternario);
+                    SiguienteEstado = F;
+                    break;
+                case 26:
+
+                    break;
+                case 27:
+                    SETClasificacion(Tipos.Cadena);
+                    SiguienteEstado = F;
                     break;
                 case 28:
                     SETClasificacion(Tipos.Caracter);
