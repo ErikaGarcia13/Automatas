@@ -99,15 +99,15 @@ namespace Automatas
                     }
                     else if(t == '"')
                     {
-                        SiguienteEstado = 25;
+                        SiguienteEstado = 26;
                     }
                     else if(t == '´') 
                     {
-                        SiguienteEstado = 26;
+                        SiguienteEstado = 27;
                     }
                     else
                     {
-                        SiguienteEstado = 28;
+                        SiguienteEstado = 29;
                     }
                     break;
                 case 1:
@@ -131,12 +131,10 @@ namespace Automatas
                     {
                         SiguienteEstado = 3;
                     }
-                    /*
-                    else if (char.tolower(t)=='e')
+                    else if (char.ToLower(t)=='e')
                     {
                         SiguienteEstado = 5;
                     }
-                    */
                     else
                     {
                         SiguienteEstado = F;
@@ -157,12 +155,10 @@ namespace Automatas
                     {
                         SiguienteEstado = 4;
                     }
-                    /*
-                    else if (char.tolower(t)=='e')
+                    else if (char.ToLower(t)=='e')
                     {
                         SiguienteEstado = 5;
                     }
-                    */
                     else
                     {
                         SiguienteEstado = F;
@@ -345,13 +341,38 @@ namespace Automatas
                     SiguienteEstado = F;
                     break;
                 case 26:
-
+                    if (t == '"')
+                    {
+                        SiguienteEstado = 28;
+                    }
+                    else if(archivo.EndOfStream)
+                    {
+                        SiguienteEstado = E;
+                    }
+                    else
+                    {
+                        SiguienteEstado = 26;
+                    }
                     break;
                 case 27:
+                    if (t == '´')
+                    {
+                        SiguienteEstado = 28;
+                    }
+                    else if(archivo.EndOfStream)
+                    {
+                        SiguienteEstado = E;
+                    }
+                    else 
+                    {
+                        SiguienteEstado = 27;
+                    }
+                    break;
+                case 28:
                     SETClasificacion(Tipos.Cadena);
                     SiguienteEstado = F;
                     break;
-                case 28:
+                case 29:
                     SETClasificacion(Tipos.Caracter);
                     SiguienteEstado = F;
                     break;
