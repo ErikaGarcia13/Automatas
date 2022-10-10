@@ -49,8 +49,62 @@ namespace Automatas
                     {
                         SiguienteEstado = 2;
                     }
-                    
-
+                    else if(t == '=')
+                    {
+                        SiguienteEstado = 8;
+                    }
+                    else if(t == ':')
+                    {
+                        SiguienteEstado = 10;
+                    }
+                    else if(t == ';')
+                    {
+                       SiguienteEstado = 12; 
+                    }
+                    else if(t == '&')
+                    {
+                        SiguienteEstado = 13;
+                    }
+                    else if(t == '|')
+                    {
+                        SiguienteEstado = 15;
+                    }
+                    else if(t == '!')
+                    {
+                        SiguienteEstado = 16;
+                    }
+                    else if(t == '>')
+                    {
+                        SiguienteEstado = 17;
+                    }
+                    else if(t == '<')
+                    {
+                        SiguienteEstado = 19;
+                    }
+                    else if(t == '+')
+                    {
+                        SiguienteEstado = 20;
+                    }
+                    else if(t == '-')
+                    {
+                        SiguienteEstado = 21;
+                    }
+                    else if(t == '%' || t == '/' || t == '*')
+                    {
+                        SiguienteEstado = 23;
+                    }
+                    else if(t == '?')
+                    {
+                        SiguienteEstado = 25;
+                    }
+                    else if(t == '"')
+                    {
+                        SiguienteEstado = 25;
+                    }
+                    else if(t == '´') 
+                    {
+                        SiguienteEstado = 26;
+                    }
                     else
                     {
                         SiguienteEstado = 28;
